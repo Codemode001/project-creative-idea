@@ -6,7 +6,7 @@ import Dashboard from "./pages/homepage";
 const App = () => {
   return (
     <>
-      <Dashboard />
+      <Signup />
     </>
   );
 };
