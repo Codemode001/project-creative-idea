@@ -36,6 +36,7 @@ const theme = createTheme();
 
 export default function LogIn() {
   const history = useHistory();
+
   const handleSubmit = (event) => {
     history.push("/dashboard");
   };
