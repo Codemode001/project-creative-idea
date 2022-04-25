@@ -41,7 +41,8 @@ export default function LogIn() {
     history.push("/dashboard");
   };
   const handleClick = (event) => {
-    history.push("/sign-up");
+    console.log("asd");
+    history.push("/dashboard");
   };
 
   return (
@@ -106,14 +107,13 @@ export default function LogIn() {
                   Forgot password?
                 </Link>
               </Grid>
-              <Grid item>
-                <Link variant="body2" onClick={handleClick}>
-                  {"Don't have an account? Sign Up"}
-                </Link>
-              </Grid>
+              <Grid item></Grid>
             </Grid>
           </Box>
         </Box>
+        <Button variant="body2" onClick={handleClick}>
+          {"Don't have an account? Sign Up"}
+        </Button>
         <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>

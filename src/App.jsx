@@ -10,9 +10,10 @@ const App = () => {
   return (
     <BrowserRouter>
       <Switch>
+        {console.log("swtihxch")}
         <Route exact path="/sign-up" component={Signup} />
+        <Route exact path="/idea-page" component={ideaPage} />
         <Route exact path="/dashboard" component={Dashboard} />
-        <Route exact path="/ideapage" component={ideaPage} />
         <Route path="/" component={LogIn} />
       </Switch>
     </BrowserRouter>
