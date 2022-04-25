@@ -25,16 +25,15 @@ function Copyright(props) {
       {"Copyright © "}
       <Link color="inherit" href="https://mui.com/">
         Your Website
-      </Link>{" "}
+      </Link>
       {new Date().getFullYear()}
-      {"."}
     </Typography>
   );
 }
 
 const theme = createTheme();
 
-export default function LogIn() {
+export default function LoginPage() {
   const history = useHistory();
 
   const handleSubmit = (event) => {
