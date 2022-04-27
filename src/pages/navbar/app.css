@@ -1,0 +1,7 @@
+#control fieldset {
+    border: 0;
+  }
+
+#buttonContainer {
+    max-width: 5rem;
+}
