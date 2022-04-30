@@ -1,7 +1,53 @@
 #control fieldset {
     border: 0;
   }
+#container-main {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+#navbar-content {
+        margin: 10px;
+}
 
-#buttonContainer {
-    max-width: 5rem;
+#button {
+  background-color: white;
+  color: black;
+  margin-top: 13px;
+  font-weight: 1000;
+  border-radius: 20px;
+}
+#button:hover {
+  background-color: #d3d3d3;
+}
+.rightnav {
+  margin-top: 7px;
+  
+}
+#settings {
+  background-color: white;
+  border-radius: 50px;
+  width: 20px;
+  color: black;
+  margin-top: 10px;
+  margin-right: 10px;
+}
+
+#settings:hover {
+  background-color: #d3d3d3;
+}
+
+#settings-avatar {
+  margin-right: 10px;
+}
+#settings-avatar-container {
+  background-color: #d3d3d3;
+  flex-direction: row;
+  display: flex;
+  height: 6rem;
+  width: 20rem;
+}
+.settings-content {
+  margin: 0;
 }
