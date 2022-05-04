@@ -23,10 +23,6 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import ChatIcon from "@mui/icons-material/Chat";
 import { styled, alpha } from "@mui/material/styles";
 import Menu from "@mui/material/Menu";
-import EditIcon from "@mui/icons-material/Edit";
-import ArchiveIcon from "@mui/icons-material/Archive";
-import FileCopyIcon from "@mui/icons-material/FileCopy";
-import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import KeyboardArrowDownIcon from "@mui/icons-material/KeyboardArrowDown";
 
 function notificationsLabel(count) {
