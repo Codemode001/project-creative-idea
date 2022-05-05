@@ -5,12 +5,14 @@
   margin-top: 20px;
   display: flex;
   flex-direction: row;
-  justify-content: flex-start;
-}
-#navbar-content {
-      margin: 10px;
+  justify-content: center;
+  width: 100%;
+  background-color: #d3d3d3;
 }
 
+.searchbar-content {
+      width: 100%;
+}
 #button {
 background-color: white;
 color: black;
@@ -21,10 +23,13 @@ border-radius: 20px;
 #button:hover {
 background-color: #d3d3d3;
 }
+#rightnav-content {
+  display: flex;
+}
 .rightnav {
 margin-top: 7px;
-
 }
+
 #settings {
 background-color: white;
 border-radius: 50px;

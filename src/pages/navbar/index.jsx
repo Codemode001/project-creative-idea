@@ -110,10 +110,7 @@ export default function Navbar() {
             sx={{ width: 46, height: 45, marginTop: "4px", marginRight: "5px" }}
           />
         </div>
-        <div
-          className="navbar-content"
-          style={{ height: "55px", minWidth: "60px" }}
-        >
+        <div style={{ height: "55px", minWidth: "60px" }}>
           <Button
             id="button"
             aria-disabled="false"
@@ -124,17 +121,17 @@ export default function Navbar() {
             Home
           </Button>
         </div>
-        <div className="navbar-content">
+        <div className="searchbar-content">
           <Paper
             component="form"
+            id="searchbar"
             sx={{
               p: "2px 4px",
               display: "flex",
               alignItems: "center",
-              width: 800,
               height: 50,
+              width: "100%",
               marginLeft: "30px",
-              marginRight: "20px",
               borderRadius: "100px",
               backgroundColor: "#ECECEC",
             }}
@@ -177,109 +174,112 @@ export default function Navbar() {
             </div>
           </Paper>
         </div>
-        <div id="notification" className="rightnav">
-          <IconButton aria-label={notificationsLabel(100)}>
-            <Badge badgeContent={100} color="primary">
-              <NotificationsIcon color="action" />
-            </Badge>
-          </IconButton>
-        </div>
-        <div id="inbox" className="rightnav">
-          <ListItemButton onClick={handleClick}>
-            <ListItemIcon>
-              <ChatIcon />
-              {open ? <ExpandLess /> : <ExpandMore />}
-            </ListItemIcon>
-          </ListItemButton>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <List component="div" disablePadding>
-              <ListItemButton sx={{ pl: 4 }}>
-                <ListItemText primary="No messages" />
-              </ListItemButton>
-            </List>
-          </Collapse>
-        </div>
-        <div id="profile-button" className="rightnav">
-          <IconButton>
-            <Avatar
-              alt="profile"
-              src="https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_UY1200_CR83,0,630,1200_AL_.jpg"
-              sx={{
-                width: 26,
-                height: 25,
-                marginRight: "5px",
+
+        <div id="rightnav-content">
+          <div id="notification" className="rightnav">
+            <IconButton aria-label={notificationsLabel(100)}>
+              <Badge badgeContent={100} color="primary">
+                <NotificationsIcon color="action" />
+              </Badge>
+            </IconButton>
+          </div>
+          <div id="inbox" className="rightnav">
+            <ListItemButton onClick={handleClick}>
+              <ListItemIcon>
+                <ChatIcon />
+                {open ? <ExpandLess /> : <ExpandMore />}
+              </ListItemIcon>
+            </ListItemButton>
+            <Collapse in={open} timeout="auto" unmountOnExit>
+              <List component="div" disablePadding>
+                <ListItemButton sx={{ pl: 4 }}>
+                  <ListItemText primary="No messages" />
+                </ListItemButton>
+              </List>
+            </Collapse>
+          </div>
+          <div id="profile-button" className="rightnav">
+            <IconButton>
+              <Avatar
+                alt="profile"
+                src="https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_UY1200_CR83,0,630,1200_AL_.jpg"
+                sx={{
+                  width: 26,
+                  height: 25,
+                  marginRight: "5px",
+                }}
+              />
+            </IconButton>
+          </div>
+          <div>
+            <Button
+              id="settings"
+              aria-haspopup="true"
+              aria-expanded={open1 ? "true" : undefined}
+              onClick={handleClicks}
+              endIcon={<KeyboardArrowDownIcon />}
+            ></Button>
+            <StyledMenu
+              id="settings-menu"
+              MenuListProps={{
+                "aria-labelledby": "demo-customized-button",
               }}
-            />
-          </IconButton>
-        </div>
-        <div>
-          <Button
-            id="settings"
-            aria-haspopup="true"
-            aria-expanded={open1 ? "true" : undefined}
-            onClick={handleClicks}
-            endIcon={<KeyboardArrowDownIcon />}
-          ></Button>
-          <StyledMenu
-            id="settings-menu"
-            MenuListProps={{
-              "aria-labelledby": "demo-customized-button",
-            }}
-            anchorEl={anchorEl}
-            open={open1}
-            onClose={handleClose}
-          >
-            <span style={{ marginLeft: "15px" }}> currently in</span>
-            <div id="settings-avatar-container">
-              <div id="settings-avatar">
-                <Avatar
-                  alt="Robert downey jr"
-                  src="https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_UY1200_CR83,0,630,1200_AL_.jpg"
-                  sx={{
-                    width: 46,
-                    height: 45,
-                    marginTop: "4px",
-                  }}
-                />
+              anchorEl={anchorEl}
+              open={open1}
+              onClose={handleClose}
+            >
+              <span style={{ marginLeft: "15px" }}> currently in</span>
+              <div id="settings-avatar-container">
+                <div id="settings-avatar">
+                  <Avatar
+                    alt="Robert downey jr"
+                    src="https://m.media-amazon.com/images/M/MV5BNzg1MTUyNDYxOF5BMl5BanBnXkFtZTgwNTQ4MTE2MjE@._V1_UY1200_CR83,0,630,1200_AL_.jpg"
+                    sx={{
+                      width: 46,
+                      height: 45,
+                      marginTop: "4px",
+                    }}
+                  />
+                </div>
+                <div>
+                  <h3 className="settings-content">Robert downey jr.</h3>
+                  <p className="settings-content">personal</p>
+                  <p className="settings-content">robert@gmail.com</p>
+                </div>
               </div>
-              <div>
-                <h3 className="settings-content">Robert downey jr.</h3>
-                <p className="settings-content">personal</p>
-                <p className="settings-content">robert@gmail.com</p>
+              <div id="settings-your-accounts-container">
+                <span style={{ marginLeft: "15px" }}>Your accounts</span>
+                <MenuItem onClick={handleClose} disableRipple>
+                  Add account
+                </MenuItem>
+                <MenuItem onClick={handleClose} disableRipple>
+                  Convert to business
+                </MenuItem>
+                \
               </div>
-            </div>
-            <div id="settings-your-accounts-container">
-              <span style={{ marginLeft: "15px" }}>Your accounts</span>
-              <MenuItem onClick={handleClose} disableRipple>
-                Add account
-              </MenuItem>
-              <MenuItem onClick={handleClose} disableRipple>
-                Convert to business
-              </MenuItem>
-              \
-            </div>
-            <div id="settings-more-options-container">
-              <span style={{ marginLeft: "15px" }}>More options</span>
-              <MenuItem onClick={handleClose} disableRipple>
-                Settings
-              </MenuItem>
-              <MenuItem onClick={handleClose} disableRipple>
-                Turn your hime feed
-              </MenuItem>
-              <MenuItem onClick={handleClose} disableRipple>
-                Install the windows app
-              </MenuItem>
-              <MenuItem onClick={handleClose} disableRipple>
-                Get help
-              </MenuItem>
-              <MenuItem onClick={handleClose} disableRipple>
-                See terms and privacy
-              </MenuItem>
-              <MenuItem onClick={handleClose} disableRipple>
-                Log out
-              </MenuItem>
-            </div>
-          </StyledMenu>
+              <div id="settings-more-options-container">
+                <span style={{ marginLeft: "15px" }}>More options</span>
+                <MenuItem onClick={handleClose} disableRipple>
+                  Settings
+                </MenuItem>
+                <MenuItem onClick={handleClose} disableRipple>
+                  Turn your hime feed
+                </MenuItem>
+                <MenuItem onClick={handleClose} disableRipple>
+                  Install the windows app
+                </MenuItem>
+                <MenuItem onClick={handleClose} disableRipple>
+                  Get help
+                </MenuItem>
+                <MenuItem onClick={handleClose} disableRipple>
+                  See terms and privacy
+                </MenuItem>
+                <MenuItem onClick={handleClose} disableRipple>
+                  Log out
+                </MenuItem>
+              </div>
+            </StyledMenu>
+          </div>
         </div>
       </div>
     </React.Fragment>
