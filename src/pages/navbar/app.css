@@ -24,6 +24,7 @@ background-color: #d3d3d3;
 }
 #rightnav-content {
   display: flex;
+  margin-left: 3rem;
 }
 .rightnav {
 margin-top: 7px;
