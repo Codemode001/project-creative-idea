@@ -8,6 +8,9 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import AddIcon from "@mui/icons-material/Add";
+import SortIcon from "@mui/icons-material/Sort";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -75,34 +78,41 @@ export default function ProfilePage() {
               Edit Profile
             </Button>
           </div>
-          <Box sx={{ width: "100%" }}>
-            <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
-              <div style={{ marginTop: "2rem", marginLeft: "30rem" }}>
-                <Tabs
-                  value={value}
-                  onChange={handleChange}
-                  aria-label="basic tabs example"
-                >
-                  <Tab label="Created" {...a11yProps(0)} />
-                  <Tab label="Saved" {...a11yProps(1)} />
-                </Tabs>
-              </div>
-            </Box>
-            <div
-              style={{
-                marginLeft: "25rem",
-                marginTop: "5rem",
-              }}
-            >
-              <TabPanel value={value} index={0}>
-                <h1>No created Pins yet</h1>
-              </TabPanel>
-              <TabPanel value={value} index={1}>
-                <h1>No created Pins yet</h1>
-              </TabPanel>
+        </Stack>
+        <Box sx={{ width: "100%" }}>
+          <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
+            <div style={{ marginTop: "2rem", marginLeft: "30rem" }}>
+              <Tabs
+                value={value}
+                onChange={handleChange}
+                aria-label="basic tabs example"
+              >
+                <Tab label="Created" {...a11yProps(0)} />
+                <Tab label="Saved" {...a11yProps(1)} />
+              </Tabs>
             </div>
           </Box>
-        </Stack>
+          <div id="add-sorting-container">
+            <IconButton style={{ marginRight: "67rem", color: "black" }}>
+              <SortIcon />
+            </IconButton>
+            <IconButton style={{ color: "black" }}>
+              <AddIcon />
+            </IconButton>
+          </div>
+          <div
+            style={{
+              marginLeft: "25rem",
+            }}
+          >
+            <TabPanel value={value} index={0}>
+              <h1>No created Pins yet</h1>
+            </TabPanel>
+            <TabPanel value={value} index={1}>
+              <h1>No created Pins yet</h1>
+            </TabPanel>
+          </div>
+        </Box>
       </Container>
     </React.Fragment>
   );
